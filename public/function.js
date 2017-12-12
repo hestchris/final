@@ -1,29 +1,14 @@
 $(document).ready(function(){
 
-    $('#searchButton').on('click', function(){
-        $.post('/search', {searchTerm: $('#searchInput').val()}, function(dataFromServer){
-            console.log(dataFromServer)
-      		$('a').html(dataFromServer.text).attr('href', dataFromServer.link)
-            
-        })
-    })
-})
+	$('#submit').on('click', function() {
+		// pulls in data from html search field
+		$.post('search', {searchTerm:$('#vehicle').val()}, function(dataFromServer) {
+			console.log(dataFromServer)
+			// returns data from web scrape for display
+			$('a').html(dataFromServer.text).attr('href', dataFromServer.link)
+		})
+	})
 
 
-$(document).ready(function() {
-	console.log('ready to find your parts!')
 
-
-	var year = function() {
-		$('.year').text(Year)
-	}
-
-	var make = function() {
-		$('.make').text(Make)
-	}
-
-	var model = function () {
-		$('.model').text(Model)
-	}
-})
 

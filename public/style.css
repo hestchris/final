@@ -1,0 +1,49 @@
+body {
+	background-image: url(http://st.automobilemag.com/uploads/sites/11/2015/08/Singer-Porsche-54.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: gray;
+	}
+
+.title {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	font-family: 'Bad Script', cursive; 
+	font-size: 60px;
+	font-weight: bold;
+}
+
+.sub-header {
+	position: absolute;
+	top: 18%;
+	left: 5%;	
+	font-size: 25px;
+
+}
+
+.search-container {
+	position: absolute;
+	top: 40%;
+	left: 5%;
+}
+
+.vehicle-input {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.submit-button {
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+.vehicle-value {
+	position: absolute;
+	border-radius: 5px;
+	top: 5%;
+	right: 10%;
+	background-color: #d9d9d9d9;
+}
