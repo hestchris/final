@@ -84,7 +84,7 @@ app.post('/search', async function(req, res) {
 		.goto('https://www.hemmings.com/classifieds/cars-for-sale') 
 		.type('#q', req.body.searchTerm)
 		.click('#header_search_go')
-		.wait(1000)
+		// .wait(1000)
 		.evaluate(function() {
 			return document.querySelector('#resultdata').innerHTML
 		})
@@ -99,10 +99,10 @@ app.post('/search', async function(req, res) {
 
 	r2 =  nb2
 		.goto('http://www.allcollectorcars.com/')
-		.wait(1000)
+		// .wait(1000)
 		.type('#smartsearch', req.body.searchTerm)
 		.click('.search-btn.btn.btn-default')
-		.wait(1000)
+		// .wait(1000)
 		.evaluate(function() {
 			return document.querySelector('#listings-rows').innerHTML
 		})
@@ -121,7 +121,7 @@ app.post('/search', async function(req, res) {
 		.click('.icon-reorder.icon-white')
 		.type('.search-form', req.body.searchTerm)
 		.click('.icon-search')
-		.wait(5000)
+		// .wait(5000)
 		.evaluate(function() {
 			return document.querySelector('#results').innerHTML
 		})
