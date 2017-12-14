@@ -111,7 +111,7 @@ app.post('/search', function(req, res) {
 	// 		console.error('Search failed:', error)
 	// 	})
 
-	Promise.all([r1, r2, r3]).then(function(resolveValues){
+	Promise.all([r1]).then(function(resolveValues){
 		// var $ = cheerio.load(resolveValues[0])
 		// console.log($($('.result-block').children()['0']).text().replace(/\s+/g, ' '))
 		res.send(resolveValues)
