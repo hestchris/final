@@ -25,12 +25,12 @@ app.get('./', function(req, res) {
 
 
 // Setting up the Nightmare browser to search multiple pages at once
-app.post('/search', async function(req, res) {
+app.post('/search', function(req, res) {
 
 	// var nb0 = Nightmare({ show: true})  //bringatrailer.com
-	var nb1 = Nightmare({ show: true})  //hemmings.com
-	var nb2 = Nightmare({ show: true})  //oldcaronline.com
-	var nb3 = Nightmare({ show: true})  //fossilcars.com
+	var nb1 = Nightmare({ show: false})  //hemmings.com
+	var nb2 = Nightmare({ show: false})  //oldcaronline.com
+	var nb3 = Nightmare({ show: false})  //fossilcars.com
 
 // Having multiple 'nightmareBrowser' allows you to scrap more sites
 // 'show:false' won't open the electron browser, good to run if you are testing but not in practice (slows down production)
