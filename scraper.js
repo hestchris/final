@@ -23,6 +23,8 @@ try {
 	})
 	httpApp.listen(80)
 
+}
+
 	catch(e) {
 		console.log(e)
 		console.log('could not start HTTPS server')
