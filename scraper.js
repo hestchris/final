@@ -29,8 +29,8 @@ app.post('/search', function(req, res) {
 
 	// var nb0 = Nightmare({ show: true})  //bringatrailer.com
 	var nb1 = Nightmare({ show: false})  //hemmings.com
-	var nb2 = Nightmare({ show: false})  //oldcaronline.com
-	var nb3 = Nightmare({ show: false})  //fossilcars.com
+	// var nb2 = Nightmare({ show: false})  //oldcaronline.com
+	// var nb3 = Nightmare({ show: false})  //fossilcars.com
 
 // Having multiple 'nightmareBrowser' allows you to scrap more sites
 // 'show:false' won't open the electron browser, good to run if you are testing but not in practice (slows down production)
@@ -73,43 +73,43 @@ app.post('/search', function(req, res) {
 			console.error('Search failed:', error)
 		})
 
-	r2 =  nb2
-		.goto('http://www.allcollectorcars.com/')
-		.wait(1000)
-		.type('#smartsearch', req.body.searchTerm)
-		.click('.search-btn.btn.btn-default')
-		.wait(1000)
-		.evaluate(function() {
-			return document.querySelector('#listings-rows').innerHTML
-		})
-		.end()
-		.then((res) => {
-			console.log(res)
-			return res;
+	// r2 =  nb2
+	// 	.goto('http://www.allcollectorcars.com/')
+	// 	.wait(1000)
+	// 	.type('#smartsearch', req.body.searchTerm)
+	// 	.click('.search-btn.btn.btn-default')
+	// 	.wait(1000)
+	// 	.evaluate(function() {
+	// 		return document.querySelector('#listings-rows').innerHTML
+	// 	})
+	// 	.end()
+	// 	.then((res) => {
+	// 		console.log(res)
+	// 		return res;
 
-		})
-		.catch((error) => {
-			console.error('Search failed:', error)
-		})
+	// 	})
+	// 	.catch((error) => {
+	// 		console.error('Search failed:', error)
+	// 	})
 
-	r3 =  nb3
-		.goto('https://www.barrett-jackson.com/')
-		.click('.icon-reorder.icon-white')
-		.type('.search-form', req.body.searchTerm)
-		.click('.icon-search')
-		.wait(5000)
-		.evaluate(function() {
-			return document.querySelector('#results').innerHTML
-		})
-		.end()
-		.then((res) => {
-			console.log(res)
-			return res;
+	// r3 =  nb3
+	// 	.goto('https://www.barrett-jackson.com/')
+	// 	.click('.icon-reorder.icon-white')
+	// 	.type('.search-form', req.body.searchTerm)
+	// 	.click('.icon-search')
+	// 	.wait(5000)
+	// 	.evaluate(function() {
+	// 		return document.querySelector('#results').innerHTML
+	// 	})
+	// 	.end()
+	// 	.then((res) => {
+	// 		console.log(res)
+	// 		return res;
 
-		})
-		.catch((error) => {
-			console.error('Search failed:', error)
-		})
+	// 	})
+	// 	.catch((error) => {
+	// 		console.error('Search failed:', error)
+	// 	})
 
 	Promise.all([r1, r2, r3]).then(function(resolveValues){
 		// var $ = cheerio.load(resolveValues[0])
