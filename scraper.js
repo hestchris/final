@@ -2,37 +2,37 @@ var Nightmare = require('nightmare')
 var express = require('express')
 var bodyParser = require('body-parser')
 var cheerio = require('cheerio')
+var app = express()
 
-deploy
+//deploy
 var HTTP = require('http')
 var HTTPS = require('https')
 var fs = require('fs')
 
 
-try {
-	var httpsConfig = {
-		key: fs.readFileSync('/etc/letsencrypt/live/2tornadoes.com/privkey.pem'),
-		cert: fs.readFileSync('/etc/letsencript/live/2tornadoes.com/cert/pem'),
-	}
+// try {
+// 	var httpsConfig = {
+// 		key: fs.readFileSync('/etc/letsencrypt/live/2tornadoes.com/privkey.pem'),
+// 		cert: fs.readFileSync('/etc/letsencript/live/2tornadoes.com/cert/pem'),
+// 	}
 
-	var httpsServer = HTTPS.createServer(httpsConfig, app)
-	httpsServer.listen(443)
-	var httpApp = express()
-	httpApp.use(function(req, res, next) {
-		res.redirect('https://2tornadoes.com' + req.url)
-	})
-	httpApp.listen(80)
+// 	var httpsServer = HTTPS.createServer(httpsConfig, app)
+// 	httpsServer.listen(443)
+// 	console.log(httpsServer)
+// 	var httpApp = express()
+// 	httpApp.use(function(req, res, next) {
+// 		res.redirect('https://2tornadoes.com' + req.url)
+// 	})
+// 	httpApp.listen(80)
 
-}
+// }
 
-	catch(e) {
-		console.log(e)
-		console.log('could not start HTTPS server')
-		var httpsServer = HTTP.createServer(app)
-		httpServer.listen(80)
-	}
-
-var app = express()
+// 	catch(e) {
+// 		console.log(e)
+// 		console.log('could not start HTTPS server')
+// 		var httpsServer = HTTP.createServer(app)
+// 		httpServer.listen(80)
+// 	}
 
 app.use(express.static('./public'))
 app.use(bodyParser.urlencoded({extended:true}))
@@ -147,8 +147,8 @@ app.post('/search', async function(req, res) {
 
 
 
-// app.listen(4100, function() {
-// 	console.log('This party is kickin on port 4100')
-// })
+app.listen(80, function() {
+	console.log('This party is kickin on port 4100')
+})
 
 		
