@@ -143,7 +143,7 @@ try {
 catch(e) {
 	console.log(e)
 	console.log('could not start HTTPS server')
-	var httpsServer = HTTP.createServer(app)
+	var httpServer = HTTP.createServer(app)
 	httpServer.listen(80)
 }
 
